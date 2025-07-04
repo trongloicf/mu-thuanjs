@@ -26,6 +26,12 @@ html {
     padding-right: 5px;
 }
 
+.grid__1050px {
+    width: 1050px;
+    margin: 0 auto;
+    max-width: 100%;
+}
+
 .grid__row {
     display: flex;
     flex-wrap: wrap;
@@ -63,6 +69,12 @@ html {
     padding-left: 5px;
     padding-right: 5px;
     width: 11.1111%;
+}
+
+.grid__column-3 {
+    padding-left: 5px;
+    padding-right: 5px;
+    width: 33.3333%;
 }
 
 a {
@@ -431,6 +443,34 @@ a {
     right: 5px;
 }
 
+.p-favorite:hover {
+    background-color: antiquewhite;
+    color: #ff6f28;
+}
+
 .con-p-info:hover .p-favorite {
     display: flex;
+}
+
+#footer {
+    background-color: #fff;
+    text-align: center;
+    padding: 10px 0;
+}
+
+#footer span {
+    color: rgba(0, 0, 0, 0.5);
+    padding: 10px 0 15px;
+    font-size: 1.3rem;
+    line-height: 1.4rem;
+}
+
+/* detail */
+.pb-5px {
+    padding-bottom: 5px;
+}
+
+.con-p-detail {
+    padding-top: 30px;
+    padding-bottom: 30px;
 }
