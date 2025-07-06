@@ -392,8 +392,6 @@ a {
     vertical-align: middle;
 }
 
-.p-img {}
-
 .p-info {
     background-color: rgba(0, 0, 0, 0.5);
     text-align: center;
@@ -519,7 +517,7 @@ a {
 }
 
 .title-container {
-    max-width: 1050px;
+    max-width: 1200px;
     margin: 0 auto;
     width: 100%;
     padding: 22px 0px;
@@ -577,7 +575,7 @@ nav span {
     height: 545px;
     position: relative;
     display: flex;
-    flex-direction: column; 
+    flex-direction: column;
 }
 
 .con-big-img a {
@@ -592,4 +590,224 @@ nav span {
     vertical-align: middle;
     padding: 0px 15px 15px 15px;
     border: none;
+}
+
+.con-right-page {
+    padding: 20px 0 0 20px;
+}
+
+.breakcrumb {
+    margin-bottom: 15px;
+    font-size: 1.4rem;
+}
+
+.breakcrumb a {
+    color: #000;
+    font-weight: 700;
+}
+
+.breakcrumb a:last-child {
+    color: #999;
+    font-weight: normal;
+}
+
+.con-p-name-price {}
+
+.con-p-name-price h1 {
+    color: #282828;
+    font-size: 2.4rem;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+.con-price-page {
+    display: flex;
+    gap: 10px;
+}
+
+.price-page-old {
+    font-size: 1.7rem;
+    color: #000;
+    text-decoration: line-through;
+    font-weight: bold;
+    line-height: 1.4;
+}
+
+.price-page-current {
+    font-size: 1.7rem;
+    line-height: 1.4;
+    color: red;
+    font-weight: bold;
+}
+
+.mb-10 {
+    margin-bottom: 10px;
+}
+
+.con-size {
+    display: flex;
+    align-items: center;
+}
+
+.title-size {
+    font-size: 1.5rem;
+    padding-right: 20px;
+}
+
+.name-size {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px
+}
+
+.name-size a {
+    color: #999;
+    border: 1px solid #999;
+    background-color: #fff;
+    min-width: 45px;
+    padding: 8px;
+    text-align: center;
+
+}
+
+.p-status {
+    font-size: 1.3rem;
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    overflow: hidden;
+}
+
+.in-stock {
+    color: #7cc0a6;
+    border: 1px solid #7cc0a6;
+    border-radius: 50px;
+    padding: 5px;
+    line-height: 1;
+}
+
+.out-stock {
+    display: none;
+    color: red;
+    border: 1px solid red;
+    border-radius: 50px;
+    padding: 5px;
+    line-height: 1;
+}
+
+.con-quantity {
+    display: flex;
+    align-items: center;
+    height: 40px;
+}
+
+.con-quantity input {
+    text-align: center;
+    width: 45px;
+    height: 80%;
+    border-style: solid;
+    border-color: #999;
+    border-width: 1px 0 1px 0;
+    color: #282828;
+    outline: none;
+}
+
+.decrease {
+    width: 30px;
+    text-align: center;
+    border: 1px solid #999;
+    color: #282828;
+    cursor: pointer;
+    height: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.increase {
+    width: 30px;
+    text-align: center;
+    border: 1px solid #999;
+    color: #282828;
+    cursor: pointer;
+    height: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-actions {
+    gap: 10px;
+}
+
+.btn-buy {
+    padding: 15px 70px;
+    max-width: 400px;
+    cursor: pointer;
+    border: none;
+    color: #fff;
+    font-size: 1.4rem;
+    background: #fb6e2e;
+}
+
+.btn-add {
+    padding: 15px 70px;
+    max-width: 400px;
+    cursor: pointer;
+    border: none;
+    color: #fff;
+    font-size: 1.4rem;
+    background: #2f80ed;
+}
+
+.btn-buy:hover,
+.btn-add:hover {
+    opacity: 0.9;
+}
+
+.con-cate-brand {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 10px 0;
+    font-size: 1.2rem;
+}
+
+
+.con-cate a,
+.con-brand a {
+    position: relative;
+    display: inline-block;
+    text-decoration: none;
+    color: #333;
+    line-height: 1.7;
+}
+
+.con-cate a::after,
+.con-brand a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 2px;
+    width: 0;
+    background-color: #007bff;
+    transition: width 0.3s ease-in-out;
+}
+
+.con-cate a:hover::after,
+.con-brand a:hover::after {
+    width: 100%;
+}
+
+.title-cate,
+.title-brand {
+    color: #999;
+}
+
+.name-cate,
+.name-brand {
+    color: #282828;
 }
