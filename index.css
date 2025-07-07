@@ -907,7 +907,7 @@ nav span {
     font-size: 1.8rem;
 }
 
-.cart-total span{
+.cart-total span {
     color: #fb6e2e;
 }
 
@@ -930,11 +930,12 @@ td img {
 }
 
 th:first-child {
-    max-width: 190px;
+    max-width: 170px;
 }
 
 td:first-child {
     position: relative;
+    width: 170px;
 }
 
 .delete-p-cart {
@@ -955,4 +956,126 @@ td:first-child {
 .delete-p-cart:hover {
     background: rgba(0, 0, 0, 0.05);
     color: #dd3333;
+}
+
+.checkout-container {
+    max-width: 1200px;
+    margin: auto;
+    background: #fff;
+    padding: 30px;
+    border-radius: 5px;
+}
+
+.checkout-container h1 {
+    margin-bottom: 30px;
+    font-size: 2.3rem;
+}
+
+.checkout-grid {
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.checkout-form {
+    flex: 1;
+}
+
+.checkout-form input,
+.checkout-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    outline: none;
+}
+
+.checkout-form h2 {
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+}
+
+.checkout-summary h2 {
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+}
+
+.checkout-summary {
+    flex: 1;
+    background: #fafafa;
+    padding: 20px;
+    border-radius: 6px;
+    border: 1px solid #ddd;
+}
+
+.checkout-summary table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.checkout-summary th,
+.checkout-summary td {
+    padding: 8px;
+    font-size: 1.4rem;
+    border-bottom: 1px solid #ccc;
+    text-align: center;
+    font-weight: normal;
+}
+
+tr .td-img-pay {
+    width: 120px;
+}
+
+.total-price {
+    font-size: 1.8rem;
+    font-weight: normal;
+    margin-top: 20px;
+    text-align: right;
+}
+
+.total-price strong {
+    color: #fb6e2e;
+    font-weight: 500;
+}
+
+.btn-submit {
+    background: #d50000;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 20px;
+    width: 100%;
+}
+
+.btn-submit:hover {
+    background: #b71c1c;
+}
+
+td .img-pay {
+    width: 80px;
+}
+
+.td-pay-name-size {
+    position: relative;
+}
+
+.name-pay {
+    text-align: left;
+    line-height: 1.6;
+}
+
+.size-pay {
+    text-align: left;
+    font-weight: normal;
+    font-size: 1.3rem;
+    color: #282828;
+    line-height: 1.6;
+}
+
+td .con-quantity {
+    justify-content: center;
 }

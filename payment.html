@@ -5,114 +5,45 @@
   <title>Thanh toán | MUFC Shop</title>
   <link rel="stylesheet" href="./index.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #f5f5f5;
-      padding: 20px;
-    }
-    .checkout-container {
-      max-width: 1000px;
-      margin: auto;
-      background: #fff;
-      padding: 30px;
-      border-radius: 8px;
-    }
-    h1 {
-      margin-bottom: 30px;
-      font-size: 26px;
-    }
-    .checkout-grid {
-      display: flex;
-      gap: 40px;
-      flex-wrap: wrap;
-    }
-    .checkout-form {
-      flex: 1;
-    }
-    .checkout-form input, .checkout-form textarea, .checkout-form select {
-      width: 100%;
-      padding: 10px;
-      margin-bottom: 16px;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-    }
-    .checkout-summary {
-      flex: 1;
-      background: #fafafa;
-      padding: 20px;
-      border-radius: 6px;
-      border: 1px solid #ddd;
-    }
-    .checkout-summary table {
-      width: 100%;
-      border-collapse: collapse;
-    }
-    .checkout-summary th, .checkout-summary td {
-      padding: 8px;
-      border-bottom: 1px solid #ccc;
-      text-align: left;
-    }
-    .total-price {
-      font-size: 20px;
-      font-weight: bold;
-      margin-top: 20px;
-      text-align: right;
-    }
-    .btn-submit {
-      background: #d50000;
-      color: white;
-      padding: 12px 20px;
-      border: none;
-      border-radius: 4px;
-      font-size: 16px;
-      cursor: pointer;
-      margin-top: 20px;
-      width: 100%;
-    }
-    .btn-submit:hover {
-      background: #b71c1c;
-    }
-  </style>
 </head>
 <body>
-
   <div class="checkout-container">
     <h1>Thanh toán</h1>
     <div class="checkout-grid">
-      <!-- Form thông tin khách hàng -->
       <div class="checkout-form">
         <h2>Thông tin người nhận</h2>
         <input type="text" placeholder="Họ và tên" required>
         <input type="email" placeholder="Email" required>
         <input type="tel" placeholder="Số điện thoại" required>
         <input type="text" placeholder="Địa chỉ nhận hàng" required>
-        <select required>
-          <option value="">Chọn phương thức thanh toán</option>
-          <option value="cod">Thanh toán khi nhận hàng</option>
-          <option value="bank">Chuyển khoản ngân hàng</option>
-        </select>
         <textarea rows="4" placeholder="Ghi chú (nếu có)"></textarea>
-
         <button class="btn-submit">Đặt hàng</button>
       </div>
 
-      <!-- Tóm tắt đơn hàng -->
       <div class="checkout-summary">
         <h2>Đơn hàng của bạn</h2>
         <table>
           <tr>
+            <th>Ảnh</th>
             <th>Sản phẩm</th>
+            <th>Số lượng</th>
             <th>Giá</th>
           </tr>
           <tr>
-            <td>Áo MU 24/25 Authentic (Size M) x 1</td>
+            <td class="td-img-pay"><img class="img-pay" src="https://sneakerdaily.vn/wp-content/uploads/2025/06/Ao-Adidas-Dau-San-Nha-Authentic-Manchester-United-24_25-Mufc-Red-JF1291-3.jpg" alt="Áo MU"></td>
+            <td class="td-pay-name-size">
+              <div class="name-pay">Áo Adidas Đấu Sân Nhà Authentic Manchester United 2425 ‘Mufc Red’ JF1291</div>
+              <div class="size-pay">
+                <span class="size-left">Size:</span>
+                <span class="size-right">M</span>
+              </div>
+            </td> 
+            <td>1</td>
             <td>3.039.000₫</td>
           </tr>
-          <!-- Thêm các sản phẩm khác nếu có -->
         </table>
         <div class="total-price">
-          Tổng cộng: 3.039.000₫
+          Tổng: <strong>3.039.000đ</strong>
         </div>
       </div>
     </div>
