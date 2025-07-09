@@ -670,7 +670,13 @@ nav span {
     min-width: 45px;
     padding: 8px;
     text-align: center;
+    transition: border 0.3s;
+}
 
+.name-size a.selected {
+    background-color: #fff;
+    color: #333;
+    border: 1px solid #ff6f28;
 }
 
 .p-status {

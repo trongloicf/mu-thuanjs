@@ -66,7 +66,7 @@ function renderPDetail(product) {
     
     if(product.size.length > 0) {
         nameSize.innerHTML = product.size.map(s => `<a href="#">${s}</a>`).join("");
-        conSize.style.display = 'block';
+        conSize.style.display = 'flex';
     }
     else{
         conSize.style.display = 'none';
@@ -74,65 +74,88 @@ function renderPDetail(product) {
 }
 
 
+function handleSizeClick() {
+    const conSize = document.querySelector(".name-size");
+
+    if(!conSize) return;
+
+    conSize.addEventListener("click", (e) => {
+        if(e.target.tagName === "A"){
+            e.preventDefault();
+            const allSize = conSize.querySelectorAll("a");
+            allSize.forEach(el => el.classList.remove('selected'));
+            e.target.classList.add('selected');
+        }
+    })    
+}
+handleSizeClick();
+
+const decreaseBtn = document.querySelector(".decrease");
+const increaseBtn = document.querySelector(".increase");
+const inputQuatity = document.getElementById("input-quatity");
+
+inputQuatity.addEventListener("input", () => {
+    let value = parseInt(inputQuatity.value);
+    if (isNaN(value) || value < 1) {
+        inputQuatity.value = 1;
+    }
+});
+
+function decrease(){
+    const currentValue = parseInt(inputQuatity.value);
+    if (isNaN(currentValue) || currentValue <= 1) {
+        inputQuatity.value = 1;
+    } else {
+        inputQuatity.value = currentValue - 1;
+    }
+}
+
+function increase() {
+    const currentValue = parseInt(inputQuatity.value);
+    if (isNaN(currentValue) || currentValue < 1) {
+        inputQuatity.value = 1;
+    } else {
+        inputQuatity.value = currentValue + 1;
+    }
+}
+
+decreaseBtn.addEventListener("click", decrease);
+increaseBtn.addEventListener("click", increase);
 
 
+let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
+function addToCart(){
+    const quantityP = parseInt(document.getElementById("input-quatity").value);
+    const imageMain = document.querySelector(".con-small-img img")?.src;
+    const name = document.querySelector(".con-p-name-price h1")?.textContent.trim();
+    const priceCurrent = document.querySelector(".price-page-current")?.textContent.trim();
+    const size = document.querySelector(".name-size a.selected")?.textContent;
+    if(!size) {
+        alert('Hãy chọn size trước khi thêm vào giỏ hàng!');
+        return;
+    }
 
+    const cartItem = {
+        id: name + "-" + size,
+        name: name,
+        price: priceCurrent,
+        quantity: quantityP,
+        size: size,
+        image: imageMain
+    };
 
+    const foundItem = cart.find(item => item.id === cartItem.id);
 
+    if (foundItem) {
+        foundItem.quantity += cartItem.quantity;
+    } else {
+        cart.push(cartItem);
+    }
 
+    localStorage.setItem("cart", JSON.stringify(cart));
+    alert("Đã thêm vào giỏ hàng!");
+}
 
-
-
-
-
-//     // Ảnh lớn
-//     if (bigImg) {
-//         bigImg.src = product.imageList[0];
-//     }
-
-//     // Ảnh nhỏ
-//     smallImgs.forEach((img, i) => {
-//         if (product.imageList[i]) {
-//             img.src = product.imageList[i];
-//         } else {
-//             img.style.display = "none";
-//         }
-//     });
-
-//     // Tên sản phẩm
-//     if (productName) productName.textContent = product.name;
-
-//     // Giá
-//     if (priceOld) {
-//         if (product.discountPercent > 0) {
-//             priceOld.textContent = product.priceOld;
-//             priceOld.style.display = "block";
-//         } else {
-//             priceOld.style.display = "none";
-//         }
-//     }
-
-//     if (priceCurrent) {
-//         priceCurrent.textContent = product.priceCurrent;
-//     }
-
-//     // Mô tả (nếu có)
-//     if (descriptionBox && product.desc) {
-//         descriptionBox.innerHTML = product.desc;
-//     }
-//     const sizeContainer = document.querySelector(".name-size");
-// if (sizeContainer && product.size) {
-//     sizeContainer.innerHTML = product.size.map(s => `<a href="#">${s}</a>`).join("");
-// }
-
-// // Hiển thị tồn kho
-// const inStock = document.querySelector(".in-stock");
-// const outStock = document.querySelector(".out-stock");
-// if (product.stock > 0) {
-//     inStock.style.display = "block";
-//     outStock.style.display = "none";
-// } else {
-//     inStock.style.display = "none";
-//     outStock.style.display = "block";
-// }
+const addToCartBtn = document.querySelector(".btn-add");
+addToCartBtn.addEventListener("click", addToCart); 
