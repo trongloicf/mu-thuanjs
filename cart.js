@@ -30,7 +30,7 @@ function renderPCart() {
                         `<tr>
                             <td><img src="${item.image}"
                                     alt="${item.name}">
-                                <button class="delete-p-cart">x</button>
+                                <button class="delete-p-cart" onclick="deleteItem(${index})">x</button>
                             </td>
                             <td>${item.name}</td>
                             <td>${item.size}</td>
@@ -47,6 +47,14 @@ function renderPCart() {
     });
     const cartTotal = document.querySelector(".cart-total span");
     cartTotal.textContent = `${total.toLocaleString("vi-VN")}đ`;
+}
+
+function deleteItem(index) {
+    if(confirm('Chắn chắn muốn xóa sản phẩm này chứ?')){
+        cart.splice(index, 1);
+        localStorage.setItem("cart", JSON.stringify(cart));
+        renderPCart();
+    }
 }
 
 function increase(index) {

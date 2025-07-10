@@ -120,7 +120,7 @@ const products = [
 
 function renderPHome() {
     const conPHome = document.getElementById("p-home");
-    products.forEach(pHome => {
+    products.slice(0, 5).forEach(pHome => {
         const div = document.createElement("div");
         div.className = "grid__column-2-4";
         div.innerHTML =
